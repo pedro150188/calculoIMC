@@ -6,6 +6,7 @@
 package calculoimcjava;
 
 import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -32,18 +33,18 @@ public class CalculoIMCjava
                 calculo = "Abaixo do Peso";
         else
                 if (imc >=18.50 && imc <= 24.99)
-                    calculo = "Peso ideal";
+                    calculo = "Peso normal";
         else
                     if (imc >= 25 && imc <=29.99)
-                        calculo = "Obesidade Leve";
+                        calculo = "Obesidade I";
         else
                     if (imc >= 30 && imc <=34.99)
-                        calculo = "Obesidade Crítica";
+                        calculo = "Obesidade II";
         else
                         calculo = "Obesidade móbida, procure um especialista!";
-        
-        JOptionPane.showMessageDialog(null, "IMC = "+imc+" - "+calculo);
-        
+        DecimalFormat df = new DecimalFormat("##.##");        
+        JOptionPane.showMessageDialog(null,"Olá, "+nome+" seu IMC é ="+df.format(imc)+" - "+calculo);
+                
     }
     
 }
