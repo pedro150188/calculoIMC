@@ -25,19 +25,22 @@ public class CalculoIMCjava
         altura = Float.parseFloat (JOptionPane.showInputDialog("Informe sua Altura, utilize . (ponto) para casas decimais"));
         
         imc = (float) (peso/Math.pow(altura, 2));
-        if (imc <= 19)
-            calculo = "Abaixo do peso";
+        if (imc <= 17)
+            calculo = "Muito abaixo do peso";
         else
-            if(imc <= 25)
-                calculo = "Peso ideal";
+            if(imc >= 17 && imc <=18.49)
+                calculo = "Abaixo do Peso";
         else
-                if (imc <= 30)
-                    calculo = "Acima do peso";
+                if (imc >=18.50 && imc <= 24.99)
+                    calculo = "Peso ideal";
         else
-                    if (imc <= 35)
+                    if (imc >= 25 && imc <=29.99)
                         calculo = "Obesidade Leve";
         else
-                        calculo = "Obesidade, procure um especialista!";
+                    if (imc >= 30 && imc <=34.99)
+                        calculo = "Obesidade Crítica";
+        else
+                        calculo = "Obesidade móbida, procure um especialista!";
         
         JOptionPane.showMessageDialog(null, "IMC = "+imc+" - "+calculo);
         
